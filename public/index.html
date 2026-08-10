@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot Widget — Test Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a14;
+      color: #e0e0f0;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background: rgba(15, 15, 26, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar-brand {
+      font-size: 20px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #6C3CE1, #1DB8E8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .navbar-links a {
+      color: #9494B8;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .navbar-links a:hover { color: #fff; }
+
+    .hero {
+      text-align: center;
+      padding: 100px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(108,60,225,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff 0%, #c4b5fd 50%, #1DB8E8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #9494B8;
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #6C3CE1, #1DB8E8);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 30px rgba(108,60,225,0.35);
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(108,60,225,0.5);
+    }
+
+    .info-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 40px 120px;
+    }
+
+    .info-card {
+      background: rgba(26, 26, 46, 0.6);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #c4b5fd;
+    }
+
+    .info-card p, .info-card li {
+      color: #9494B8;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .info-card code {
+      display: block;
+      background: #0f0f1a;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #1DB8E8;
+      margin-top: 12px;
+      overflow-x: auto;
+      word-break: break-all;
+      white-space: pre-wrap;
+    }
+
+    .info-card ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .info-card li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-brand">✦ Demo Website</div>
+    <div class="navbar-links">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>AI-Powered Chatbot<br>Widget Demo</h1>
+    <p>This page simulates a client's WordPress site. The chatbot widget is loaded in the bottom-right corner — try it out!</p>
+    <a href="#" class="hero-cta" onclick="document.getElementById('cb-toggle').click(); return false;">💬 Open Chat</a>
+  </section>
+
+  <section class="info-section">
+    <div class="info-card">
+      <h2>🚀 WordPress Installation</h2>
+      <p>Add this single line to your WordPress theme's <strong>footer.php</strong> (before the closing <code>&lt;/body&gt;</code> tag), or use a plugin like <em>"Insert Headers and Footers"</em>:</p>
+      <code>&lt;script src="https://YOUR_SERVER_URL/widget.js" data-chatbot-server="https://YOUR_SERVER_URL"&gt;&lt;/script&gt;</code>
+    </div>
+
+    <div class="info-card">
+      <h2>✨ Features</h2>
+      <ul>
+        <li>🤖 AI-powered conversations via Google Gemini / OpenRouter</li>
+        <li>📦 Product information and catalog browsing</li>
+        <li>🖼️ Logo upload with AI mockup generation</li>
+        <li>💬 Multi-turn conversation memory</li>
+        <li>📱 Fully responsive on mobile and desktop</li>
+        <li>🎨 Premium dark-mode UI with animations</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h2>⚙️ Configuration</h2>
+      <p>Edit the <strong>.env</strong> file to customize:</p>
+      <ul>
+        <li><strong>AI_PROVIDER</strong> — choose "gemini" or "openrouter"</li>
+        <li><strong>OPENROUTER_API_KEY</strong> — Your OpenRouter API key</li>
+        <li><strong>OPENROUTER_MODEL</strong> — Model name e.g., google/gemma-4-31b-it:free</li>
+        <li><strong>COMPANY_NAME</strong> — Your client's company name</li>
+        <li><strong>COMPANY_DESCRIPTION</strong> — Brief company description</li>
+        <li><strong>PRODUCT_CATALOG</strong> — Comma-separated list of products/services</li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="/widget.js" data-chatbot-server=""></script>
+</body>
+</html>

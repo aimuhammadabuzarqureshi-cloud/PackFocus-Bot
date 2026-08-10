@@ -1,0 +1,70 @@
+# ==========================================
+# SENSITIVE DATA, KEYS & SECRETS (NEVER COMMIT)
+# ==========================================
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.schema
+*.env
+*.env.local
+*.env.development
+*.env.test
+*.env.production
+
+# Service Accounts, Credentials, Tokens, Certificates & Keys
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!jsconfig.json
+!components.json
+client_secret*.json
+service_account*.json
+credentials*.json
+secrets*.json
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+
+# Debug & Log files containing sensitive traces
+*.log
+debug_*.json
+debug_*.log
+npm-debug.log*
+
+# Database & Dump files
+*.sqlite
+*.db
+
+# ==========================================
+# DEPENDENCIES, BINARIES & BUILD OUTPUTS
+# ==========================================
+node_modules/
+dist/
+build/
+uploads/
+test.mp3
+ngrok
+*.exe
+*.bin
+
+# ==========================================
+# SYSTEM & EDITOR FILES
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+.vscode/
+.idea/
