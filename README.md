@@ -218,3 +218,5 @@ This project is licensed under the [MIT License](LICENSE) - see the LICENSE file
 **Made with ❤️ by [PackVibe Solutions / Muhammad Abuzar Qureshi](https://github.com/aimuhammadabuzarqureshi-cloud)**
 
 </div>
+
+<!-- Co-authored contribution badge patch -->
